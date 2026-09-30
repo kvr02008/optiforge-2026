@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OptiForge | Autonomous IT Operations</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div>
+            <h1>OPTIFORGE</h1>
+            <p>Autonomous IT Operations & Self-Healing Platform</p>
+        </div>
+
+        <div class="connection">
+            <span class="status-dot"></span>
+            API ONLINE
+        </div>
+    </header>
+
+
+    <main class="dashboard">
+
+        <!-- SYSTEM METRICS -->
+
+        <section class="metrics">
+
+            <div class="metric-card">
+                <span class="metric-label">CPU USAGE</span>
+                <strong id="cpuValue">--%</strong>
+                <div class="progress">
+                    <div id="cpuBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <span class="metric-label">MEMORY</span>
+                <strong id="memoryValue">--%</strong>
+                <div class="progress">
+                    <div id="memoryBar"></div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <span class="metric-label">RESPONSE TIME</span>
+                <strong id="responseValue">-- s</strong>
+            </div>
+
+            <div class="metric-card">
+                <span class="metric-label">ERROR RATE</span>
+                <strong id="errorValue">--%</strong>
+            </div>
+
+        </section>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>System Status</h2>
+                <span id="systemStatus" class="badge healthy">
+                    HEALTHY
+                </span>
+            </div>
+
+            <div class="status-content">
+
+                <div class="status-icon" id="statusIcon">
+                    ✓
+                </div>
+
+                <div>
+                    <h3 id="statusTitle">
+                        System operating normally
+                    </h3>
+
+                    <p id="statusMessage">
+                        No active anomalies detected.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DECISION + RECOVERY -->
+
+        <section class="two-column">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>AI Decision</h2>
+                </div>
+
+                <div class="decision">
+
+                    <div class="decision-row">
+                        <span>Detected Issue</span>
+                        <strong id="issue">None</strong>
+                    </div>
+
+                    <div class="decision-row">
+                        <span>Selected Agent</span>
+                        <strong id="agent">None</strong>
+                    </div>
+
+                    <div class="decision-row">
+                        <span>Action</span>
+                        <strong id="action">No action</strong>
+                    </div>
+
+                    <div class="decision-row">
+                        <span>Decision Score</span>
+                        <strong id="score">--</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <h2>Recovery</h2>
+                </div>
+
+                <div class="recovery">
+
+                    <div id="recoveryIcon" class="recovery-icon">
+                        ✓
+                    </div>
+
+                    <h3 id="recoveryTitle">
+                        No recovery required
+                    </h3>
+
+                    <p id="recoveryMessage">
+                        The system is operating normally.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEMO CONTROLS -->
+
+        <section class="panel demo-panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Simulation Control</h2>
+                    <p class="subtitle">
+                        Trigger controlled system scenarios
+                    </p>
+                </div>
+            </div>
+
+            <div class="buttons">
+
+                <button onclick="simulate('healthy')">
+                    Healthy
+                </button>
+
+                <button onclick="simulate('cpu')">
+                    Simulate High CPU
+                </button>
+
+                <button onclick="simulate('memory')">
+                    Simulate High Memory
+                </button>
+
+                <button onclick="simulate('failure')">
+                    Simulate Service Failure
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- EVENT LOG -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Event Log</h2>
+            </div>
+
+            <div id="eventLog" class="event-log">
+
+                <div class="event">
+                    <span>●</span>
+                    <span>OptiForge dashboard initialized.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>OptiForge • Autonomous Self-Healing Infrastructure</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
